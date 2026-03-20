@@ -3,10 +3,14 @@ import { motion } from 'framer-motion';
 import { Clock, Calendar, Bell, ShieldCheck } from 'lucide-react';
 import './Home.css';
 
+// Import images
+import heroImage from '../../assets/temple_hero_light.png';
+import welcomeDeity from '../../assets/welcome_deity.png';
+
 const Home = () => {
   return (
     <div className="home-page">
-      <section className="hero" style={{ backgroundImage: "url('/src/assets/temple_hero_light.png')" }}>
+      <section className="hero" style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="hero-overlay"></div>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -41,7 +45,7 @@ const Home = () => {
         </div>
         <div className="welcome-grid">
           <div className="welcome-image">
-            <img src="/src/assets/welcome_deity.png" alt="Sri Veera Vittala Venkataramana" />
+            <img src={welcomeDeity} alt="Sri Veera Vittala Venkataramana" />
           </div>
           <div className="welcome-text">
             <p>

@@ -2,14 +2,24 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './Gallery.css';
 
+// Import images
+import aboutTemple from '../../assets/about_temple.png';
+import hero from '../../assets/hero.png';
+import templeAboutHero from '../../assets/temple_about_hero.png';
+import templeFest from '../../assets/temple_fest.png';
+import templeHeroLight from '../../assets/temple_hero_light.png';
+import templeInner from '../../assets/temple_inner.png';
+import welcomeDeity from '../../assets/welcome_deity.png';
+
 const Gallery = () => {
   const images = [
-    "https://images.unsplash.com/photo-1544013919-450bc9d0bc6b?auto=format&fit=crop&q=80&w=600",
-    "https://images.unsplash.com/photo-1606293926075-69a00dbfde81?auto=format&fit=crop&q=80&w=600",
-    "https://images.unsplash.com/photo-1590059536098-b80c102bd935?auto=format&fit=crop&q=80&w=600",
-    "https://images.unsplash.com/photo-1582510003544-2d0956654591?auto=format&fit=crop&q=80&w=600",
-    "https://images.unsplash.com/photo-1561059488-916d69792237?auto=format&fit=crop&q=80&w=600",
-    "https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&q=80&w=600"
+    aboutTemple,
+    hero,
+    templeAboutHero,
+    templeFest,
+    templeHeroLight,
+    templeInner,
+    welcomeDeity
   ];
 
   return (
