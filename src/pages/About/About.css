@@ -1,0 +1,154 @@
+.about-page {
+  padding-top: 100px;
+  background-color: white;
+}
+
+.about-hero {
+  padding: 4rem 0 3rem;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+.about-hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-hero-image-container {
+  width: 100%;
+  margin: 0 auto 3.5rem;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.18);
+  position: relative;
+  aspect-ratio: 21 / 9; /* Cinematic landscape */
+  min-height: 300px;
+  max-height: 500px;
+  background: #eee;
+}
+
+.about-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: white;
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.about-hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--secondary-maroon);
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--primary-saffron);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 auto 1.5rem;
+  display: block;
+}
+
+.about-hero .accent-line {
+  margin: 1.5rem auto 0;
+}
+
+.history-article {
+  width: 96%;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.history-row {
+  display: block;
+  margin-bottom: 3rem;
+  padding: 0 5%;
+}
+
+.side-point {
+  margin-bottom: 1.5rem;
+}
+
+.side-point h3 {
+  font-size: 1.8rem;
+  color: var(--secondary-maroon);
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  border-left: 4px solid var(--primary-saffron);
+  padding-left: 1.5rem;
+}
+
+.para-content {
+  padding-left: 0;
+  width: 100%;
+}
+
+.para-content p {
+  font-size: 1.25rem;
+  line-height: 1.9;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.para-content p:last-child {
+  margin-bottom: 0;
+}
+
+.article-footer {
+  padding: 4rem 0;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+.quote-divider p {
+  font-size: 1.8rem;
+  font-style: italic;
+  color: var(--secondary-maroon);
+  line-height: 1.5;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .history-row {
+    padding: 0 8%;
+  }
+  
+  .side-point h3 {
+    font-size: 1.4rem;
+  }
+}

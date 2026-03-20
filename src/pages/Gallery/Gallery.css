@@ -1,0 +1,12 @@
+.gallery-header h1 {
+  color: var(--secondary-maroon);
+}
+
+.gallery-overlay {
+  background: rgba(255, 153, 51, 0.6);
+}
+
+.gallery-overlay span {
+  color: white;
+  border-color: white;
+}

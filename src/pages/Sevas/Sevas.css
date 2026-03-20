@@ -1,0 +1,23 @@
+.category-title {
+  border-left: 6px solid var(--primary-saffron);
+  color: var(--secondary-maroon);
+}
+
+.seva-card:hover {
+  border-color: var(--primary-saffron);
+}
+
+.donation-card {
+  background: white;
+  color: var(--text-dark);
+  border: 2px solid var(--primary-saffron);
+}
+
+.donation-card h2 {
+  color: var(--secondary-maroon);
+}
+
+.bank-details {
+  background: var(--bg-light-gray);
+  border-color: #ddd;
+}
