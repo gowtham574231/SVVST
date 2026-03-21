@@ -80,7 +80,8 @@
   margin: 0 auto 1.5rem;
   display: block;
   word-break: break-word;
-  text-align: center !important; /* Force center to avoid accidental justification gaps */
+  text-align: center !important;
+  /* Force center to avoid accidental justification gaps */
 }
 
 
@@ -125,10 +126,9 @@
 .history-image-column img {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 3;
-  /* Maintain consistent aspect ratio */
-  max-height: clamp(150px, 35vh, 350px);
-  /* Responsive height */
+  /* Removed fixed 4/3 aspect ratio to allow taller portrait images */
+  max-height: clamp(300px, 80vh, 600px);
+  /* Responsive height increased */
   object-fit: cover;
   border-radius: 12px;
   /* Softer corners */
@@ -145,7 +145,8 @@
 }
 
 .side-point h3 {
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem); /* Responsive scaling */
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  /* Responsive scaling */
   color: var(--secondary-maroon);
   font-family: var(--font-heading);
   font-weight: 700;
@@ -162,7 +163,8 @@
 }
 
 .para-content p {
-  font-size: clamp(0.8rem, 1.8vw, 1.1rem); /* Responsive scaling with 0.8rem min */
+  font-size: clamp(0.8rem, 1.8vw, 1.1rem);
+  /* Responsive scaling with 0.8rem min */
   line-height: 1.6;
   color: #444;
   margin-bottom: 1rem;
@@ -176,7 +178,8 @@
 }
 
 .main-section-heading h2 {
-  font-size: clamp(1.3rem, 4vw, 2rem); /* Responsive scaling with 1.3rem min */
+  font-size: clamp(1.3rem, 4vw, 2rem);
+  /* Responsive scaling with 1.3rem min */
   color: var(--secondary-maroon);
   font-family: var(--font-heading);
   text-transform: uppercase;
@@ -210,10 +213,12 @@
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  padding: 4rem 0; /* Vertical padding only */
+  padding: 4rem 0;
+  /* Vertical padding only */
   border-radius: 0;
   box-shadow: none;
-  transition: none !important; /* Forces a stiff layout on zoom/resize */
+  transition: none !important;
+  /* Forces a stiff layout on zoom/resize */
 }
 
 .history-row.colored-section .main-section-heading,
@@ -236,7 +241,8 @@
 }
 
 .quote-divider p {
-  font-size: clamp(0.9rem, 2vw, 1.3rem); /* Responsive scaling for quote */
+  font-size: clamp(0.9rem, 2vw, 1.3rem);
+  /* Responsive scaling for quote */
   font-style: italic;
   color: var(--secondary-maroon);
   line-height: 1.4;
@@ -256,7 +262,8 @@
 
 @media (max-width: 768px) {
   .split-layout-content {
-    flex-direction: column !important; /* Force stack vertically */
+    flex-direction: column !important;
+    /* Force stack vertically */
     gap: 1.5rem;
   }
 
@@ -264,13 +271,15 @@
     flex: 1;
     width: 100%;
     max-width: none;
-    order: 1; /* Image on top */
+    order: 1;
+    /* Image on top */
   }
 
   .text-column {
     flex: 1;
     width: 100%;
-    order: 2; /* Text below */
+    order: 2;
+    /* Text below */
   }
 
   .history-row.colored-section {
@@ -280,9 +289,10 @@
 
 @media (max-width: 480px) {
   .history-article {
-    width: 92%; /* Use more width on tiny screens */
+    width: 92%;
+    /* Use more width on tiny screens */
   }
-  
+
   .history-row.colored-section .main-section-heading,
   .history-row.colored-section .split-layout-content {
     width: 92%;

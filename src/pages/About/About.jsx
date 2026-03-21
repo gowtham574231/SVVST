@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import templeHero from '../../assets/temple_about_hero.png';
-import templeInner from '../../assets/temple_inner.png';
+import veeravittala from '../../assets/veeravittala.png';
 import templeFest from '../../assets/temple_fest.png';
+import all_god from '../../assets/all_god.png'
 import './About.css';
 
 const About = () => {
   const [currentImg] = useState(0);
-  const images = [templeHero, templeInner, templeFest];
+  const images = [templeHero, templeFest, veeravittala];
 
   const historyRows = [
     {
       layout: 'split',
-      image: templeInner,
+      image: all_god,
       content: (
         <>
           <p>Panemangalore is a village in Bantwal Taluk, having a population of about 6,000. Situated on the left bank of the river Netravati, it is predominantly agricultural. The Gowda Saraswat Brahman settlement in the Village is closely spread around the Temple, and composes of 90 families with 400 Members.</p>
@@ -72,7 +72,7 @@ const About = () => {
       point: "Sri Veera Vittala Devaru",
       isMainHeading: true,
       layout: 'split',
-      image: templeInner,
+      image: veeravittala,
       background: 'colored',
       content: (
         <>
@@ -132,7 +132,7 @@ const About = () => {
                 {isSplit ? (
                   <>
                     <div className="history-image-column">
-                      <img src={row.image || templeInner} alt={row.point || "Temple Section"} />
+                      <img src={row.image || veeravittala} alt={row.point || "Temple Section"} />
                     </div>
                     <div className="text-column">
                       {row.point && !row.isMainHeading && (

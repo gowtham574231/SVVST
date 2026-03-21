@@ -5,7 +5,7 @@ import './Home.css';
 
 // Import images
 import heroImage from '../../assets/temple_hero_light.png';
-import welcomeDeity from '../../assets/welcome_deity.png';
+import all_god from '../../assets/all_god.png';
 
 const Home = () => {
   return (
@@ -31,7 +31,7 @@ const Home = () => {
       </section>
 
       {/* Welcome Section */}
-      <motion.section 
+      <motion.section
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -45,7 +45,7 @@ const Home = () => {
         </div>
         <div className="welcome-grid">
           <div className="welcome-image">
-            <img src={welcomeDeity} alt="Sri Veera Vittala Venkataramana" />
+            <img src={all_god} alt="Sri Veera Vittala Venkataramana" />
           </div>
           <div className="welcome-text">
             <p>
@@ -60,7 +60,7 @@ const Home = () => {
       </motion.section>
 
       {/* Timings Section */}
-      <motion.section 
+      <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
