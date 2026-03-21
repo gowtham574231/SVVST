@@ -30,7 +30,7 @@ const Footer = () => {
           <h3>Contact Us</h3>
           <div className="contact-item">
             <MapPin size={20} className="footer-icon" />
-            <p>Carstreet, Panemangalore, Bantwal, Karnataka - 574231</p>
+            <p>Panemangalore, Bantwal, Karnataka - 574231</p>
           </div>
           <div className="contact-item">
             <Phone size={20} className="footer-icon" />

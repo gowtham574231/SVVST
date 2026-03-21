@@ -6,19 +6,13 @@ import templeFest from '../../assets/temple_fest.png';
 import './About.css';
 
 const About = () => {
-  const [currentImg, setCurrentImg] = useState(0);
+  const [currentImg] = useState(0);
   const images = [templeHero, templeInner, templeFest];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImg((prev) => (prev + 1) % images.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [images.length]);
 
   const historyRows = [
     {
-      point: "The Heart of Panemangalore",
+      layout: 'split',
+      image: templeInner,
       content: (
         <>
           <p>Panemangalore is a village in Bantwal Taluk, having a population of about 6,000. Situated on the left bank of the river Netravati, it is predominantly agricultural. The Gowda Saraswat Brahman settlement in the Village is closely spread around the Temple, and composes of 90 families with 400 Members.</p>
@@ -29,22 +23,12 @@ const About = () => {
     {
       point: "1. Origin of the Temple (1825)",
       content: (
-        <p>The Origin of the Temple is traced to a challenge faced by the community in Panemangalore. As per an oral account, in the distant past, the small community in Panemangalore was attached for all religious purposes to our Bantwal Temple, situated on the Right Bank of the Netravati.</p>
-      )
-    },
-    {
-      point: "The Resolve",
-      content: (
         <>
+          <p>The Origin of the Temple is traced to a challenge faced by the community in Panemangalore. As per an oral account, in the distant past, the small community in Panemangalore was attached for all religious purposes to our Bantwal Temple, situated on the Right Bank of the Netravati.</p>
+          <p><strong>The Resolve</strong></p>
           <p>It was customary to go to Bantwal Temple for the annual UPAKARMA ceremony by crossing the river by boat. One Year the party of men from Panemangalore reached Bantwal somewhat late due to floods. Finding the Temple doors closed and locked, they resolved to construct a community Temple at any cost.</p>
-          <p>The challenge was met and soon a Temple was built. Vedamurthi Sri Ramachandra Bhat’s household deity <strong>Sri Venkataramana Swami</strong> with Sridevi and Bhudevi was installed as Patta Devaru. Historians conservatively fix the year of the Pratistha of the Temple as circa <strong>1825 A.D.</strong></p>
-        </>
-      )
-    },
-    {
-      point: "Divine Installation of Veera Vittala",
-      content: (
-        <>
+          <p>The challenge was met and soon a Temple was built. Vedamurthi Sri Ramachandra Bhat’s household deity <strong>Sri Venkataramana Swami</strong> with Sridevi and Bhudevi was installed as Patta Devaru. Historians conservatively fix the year of the Pratistha of the Temple as circa 1825 A.D.</p>
+          <p><strong>Divine Installation of Veera Vittala</strong></p>
           <p>Following the establishment, the business in the place declined, leading the elders to consult His Holiness the Swamiji of Sri Kashi Matha Samsthan. It was proposed that <strong>Sri Veera Vittala Murti</strong>, which was being worshipped as the household deity of the Prabhu Family of Bantwal, be installed as Patta Devaru.</p>
           <p>This proposal was carried out, and since then, Lord Veera Vittala has been the primary deity of the temple. The original Patta Devaru, Sri Venkataramana, remains in the sanctum and is carried in Utsavas twice a year.</p>
         </>
@@ -83,6 +67,31 @@ const About = () => {
           <p>The dedication of staff like the late manager Sri P. Ekanath Bhat, who served for four decades, ensures that the administrative and spiritual life of the temple continues smoothly for future generations.</p>
         </>
       )
+    },
+    {
+      point: "Sri Veera Vittala Devaru",
+      isMainHeading: true,
+      layout: 'split',
+      image: templeInner,
+      background: 'colored',
+      content: (
+        <>
+          <p>Sri Veera Vittala is the presiding deity of the shrine. The idol is a beautiful Panchaloha Murti representing Lord Vishnu in the form of Veera Vittala.</p>
+          <p>The deity is highly revered by the G.S.B. community and the annual ceremonies reflect the deep devotion and heritage of the temple.</p>
+        </>
+      )
+    },
+    {
+      point: "Swamiji Name Here",
+      isMainHeading: true,
+      layout: 'split',
+      image: templeFest,
+      background: 'white',
+      content: (
+        <>
+          <p>Swamiji para</p>
+        </>
+      )
     }
   ];
 
@@ -91,51 +100,67 @@ const About = () => {
       <header className="about-hero">
         <div className="container">
           <div className="about-hero-image-container">
-            <AnimatePresence mode='wait'>
-              <motion.img 
-                key={currentImg}
-                src={images[currentImg]} 
-                alt="Temple Heritage"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-                className="about-hero-image"
-              />
-            </AnimatePresence>
-            <div className="carousel-dots">
-              {images.map((_, idx) => (
-                <div 
-                  key={idx} 
-                  className={`dot ${idx === currentImg ? 'active' : ''}`}
-                  onClick={() => setCurrentImg(idx)}
-                />
-              ))}
-            </div>
+            <img
+              src={images[currentImg]}
+              alt="Temple Heritage"
+              className="about-hero-image"
+            />
           </div>
-          <motion.h1 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            Sacred History & Heritage
-          </motion.h1>
+
           <p className="hero-subtitle">Sri Veera Vittala Venkataramana Swamy Temple, Panemangalore</p>
           <div className="accent-line"></div>
         </div>
       </header>
 
       <div className="history-article">
-        {historyRows.map((row, index) => (
-          <section key={index} className="history-row">
-            <div className="side-point">
-              <h3>{row.point}</h3>
-            </div>
-            <div className="para-content">
-              {row.content}
-            </div>
-          </section>
-        ))}
+        {historyRows.map((row, index) => {
+          const isSplit = row.layout === 'split' || index === 0;
+          const isColored = row.background === 'colored';
+
+          return (
+            <section
+              key={index}
+              className={`history-row ${isSplit ? 'split-layout' : ''} ${isColored ? 'colored-section' : ''}`}
+            >
+              {row.isMainHeading && (
+                <div className="main-section-heading">
+                  <h2>{row.point}</h2>
+                </div>
+              )}
+
+              <div className={isSplit ? 'split-layout-content' : 'standard-layout'}>
+                {isSplit ? (
+                  <>
+                    <div className="history-image-column">
+                      <img src={row.image || templeInner} alt={row.point || "Temple Section"} />
+                    </div>
+                    <div className="text-column">
+                      {row.point && !row.isMainHeading && (
+                        <div className="side-point">
+                          <h3>{row.point}</h3>
+                        </div>
+                      )}
+                      <div className="para-content">
+                        {row.content}
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    {row.point && (
+                      <div className="side-point">
+                        <h3>{row.point}</h3>
+                      </div>
+                    )}
+                    <div className="para-content">
+                      {row.content}
+                    </div>
+                  </>
+                )}
+              </div>
+            </section>
+          );
+        })}
       </div>
 
       <footer className="article-footer">

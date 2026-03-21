@@ -20,14 +20,7 @@ const Festivals = () => {
             <p>The festival of lights, celebrated on Kartika Suddha Hunnime, where thousands of lamps illuminate the temple grounds.</p>
           </div>
         </section>
-        <section className="history-row">
-          <div className="side-point">
-            <h3>Rathotsava</h3>
-          </div>
-          <div className="para-content">
-            <p>The annual chariot festival, a grand celebration involving the entire community and surrounding villages.</p>
-          </div>
-        </section>
+
       </div>
     </div>
   );

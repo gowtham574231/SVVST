@@ -1,5 +1,8 @@
 import React from 'react';
-import '../About/About.css'; // Corrected path
+import '../About/About.css';
+import './Calendar.css';
+import calendar1 from '../../assets/calendar1.jpg';
+import calendar2 from '../../assets/calendar2.jpg';
 
 const Calendar = () => {
   return (
@@ -7,20 +10,26 @@ const Calendar = () => {
       <header className="about-hero">
         <div className="container">
           <h1>Temple Calendar</h1>
-          <p className="hero-subtitle">Upcoming Events & Important Dates</p>
+          <p className="hero-subtitle">Yearly Events & Festivals (2026-27)</p>
           <div className="accent-line"></div>
         </div>
       </header>
-      <div className="history-article container">
-        <section className="history-row">
-          <div className="side-point">
-            <h3>Yearly Calendar</h3>
+
+      <div className="container" style={{ padding: '4rem 0' }}>
+
+
+        <div className="calendar-images-container">
+          <div className="calendar-image-wrapper">
+            <a href={calendar1} target="_blank" rel="noopener noreferrer">
+              <img src={calendar1} alt="Temple Calendar 2026-27 Page 1" className="calendar-full-image" title="Click to view full size" />
+            </a>
           </div>
-          <div className="para-content">
-            <p>The temple's calendar is based on the traditional lunar calendar. Major events include Rathotsava, Lakshadipotsava, and various monthly Sankashti and Ekadashi poojas.</p>
-            <p><em>Calendar details will be updated soon with specific dates for the current year.</em></p>
+          <div className="calendar-image-wrapper">
+            <a href={calendar2} target="_blank" rel="noopener noreferrer">
+              <img src={calendar2} alt="Temple Calendar 2026-27 Page 2" className="calendar-full-image" title="Click to view full size" />
+            </a>
           </div>
-        </section>
+        </div>
       </div>
     </div>
   );
