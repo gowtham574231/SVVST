@@ -72,14 +72,17 @@
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: clamp(0.75rem, 3.5vw, 1.1rem);
   color: var(--primary-saffron);
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: clamp(0.5px, 1vw, 2px);
   text-transform: uppercase;
   margin: 0 auto 1.5rem;
   display: block;
+  word-break: break-word;
+  text-align: center !important; /* Force center to avoid accidental justification gaps */
 }
+
 
 .about-hero .accent-line {
   margin: 1.5rem auto 0;
